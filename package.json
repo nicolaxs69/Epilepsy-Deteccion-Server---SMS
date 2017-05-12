@@ -6,16 +6,23 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha test/**/*.test.js"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "twilio": "^2.11.1",
-    "mongoose":"*"
+    "mongoose": "*"
   },
   "devDependencies": {
     "assert": "^1.4.1",
     "mocha": "^3.3.0"
+  },
+  "engines": {
+    "node": "6.10.3"
   }
 }

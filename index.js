@@ -85,6 +85,6 @@ app.get('/update/:collection/:v1/:v2/:v3/:v4/:id', CORS, service.update); //http
 app.get('/delete/:collection/:param/:value', CORS, service.delete);
 app.post('/', CORS, service.post);
 
-app.listen(process.env.PORT || 12345, function () {
+app.listen(process.env.PORT || 5000, function () {
   console.log('Server running');
 })
