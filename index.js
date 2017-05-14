@@ -24,8 +24,6 @@ function CORS(req, res, next) {
  * con los parámetros to y msg, se envía
  * un mensaje de texto con twilio
  */
-
-
 app.post('/send', function (req, res) {
 
   //Validar parametros
@@ -42,6 +40,11 @@ app.post('/send', function (req, res) {
     });
 });
 
+/**
+ * Al hacer un POST a esta ruta 
+ * con los parámetros uid,lat,long en JSON, se envía
+ * un mensaje de texto con twilio a los familiares
+ */
 
 app.post('/attack',function (req, res) {
 
@@ -78,6 +81,10 @@ app.post('/attack',function (req, res) {
   })
 
 });
+
+/**
+ * FULL API REST con CRUD (Create,Read,Update,Delete) para MongoDB y MongoLab 
+ */
 
 app.all('/*', CORS);                                                     // Ejemplos
 app.get('/create/:collection/:v1/:v2/:v3/:v4', CORS, service.create);     //http://localhost:5000/create/Usuario/Nicolas/Escobar/+573122336858/1
