@@ -24,6 +24,8 @@ function CORS(req, res, next) {
  * con los parámetros to y msg, se envía
  * un mensaje de texto con twilio
  */
+
+
 app.post('/send', function (req, res) {
 
   //Validar parametros
@@ -41,10 +43,10 @@ app.post('/send', function (req, res) {
 });
 
 
-app.post('/attack', function (req, res) {
+app.post('/attack',function (req, res) {
 
   if (!req.body.uid || !req.body.lat || !req.body.long) {
-    res.json({ ok: false, error: "Missing some parameter " })
+    res.json({ ok: false, error: "Missing some parameter"})
     return;
   }
 
@@ -78,10 +80,10 @@ app.post('/attack', function (req, res) {
 });
 
 app.all('/*', CORS);                                                     // Ejemplos
-app.get('/create/:collection/:v1/:v2/:v3/:v4', CORS, service.create);     //http://localhost:12345/create/Usuario/Nicolas/Escobar/+573122336858/1
-app.get('/read/:collection', CORS, service.read);                         //http://localhost:12345/read/Usuario
-app.get('/read/:collection/:param/:value', CORS, service.readX);          //http://localhost:12345/read/Usuario/nombre/Nicolas
-app.get('/update/:collection/:v1/:v2/:v3/:v4/:id', CORS, service.update); //http://localhost:12345/update/Usuario/Nicolas/Escobar/nicolaxs69/1/591492f9c9984f19e8e60272
+app.get('/create/:collection/:v1/:v2/:v3/:v4', CORS, service.create);     //http://localhost:5000/create/Usuario/Nicolas/Escobar/+573122336858/1
+app.get('/read/:collection', CORS, service.read);                         //http://localhost:5000/read/Usuario
+app.get('/read/:collection/:param/:value', CORS, service.readX);          //http://localhost:5000/read/Usuario/nombre/Nicolas
+app.get('/update/:collection/:v1/:v2/:v3/:v4/:id', CORS, service.update); //http://localhost:5000/update/Usuario/Nicolas/Escobar/nicolaxs69/1/591492f9c9984f19e8e60272
 app.get('/delete/:collection/:param/:value', CORS, service.delete);
 app.post('/', CORS, service.post);
 

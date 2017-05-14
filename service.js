@@ -58,8 +58,10 @@ module.exports.read = function (request, response) {
 			return response.json({ status: "fail", name: tabla, description: "COLLECTION_BAD_QUERY", value: [{}] });
 		}
 		else {
-			return response.json({ status: "ok", name: tabla, description: "COLLECTION_QUERY_OK", value: items });
+			return response.json({ status: "ok", name: tabla, description: "COLLECTION_QUERY_OK", value: items});
+			
 		}
+
 	}
 }
 
