@@ -35,16 +35,16 @@ function getFamilyNumbers(uid, lat, long) {
     function buscarDatos(err, items) {
       if (err) {
         //return response.json({ status: "fail", name: tabla, description: "COLLECTION_BAD_QUERY", value: [{}] });
-      console.log("COLLECTION_BAD_QUERY");
-
-    }
-      else {
-        //return response.json({ status: "ok", name: tabla, description: "COLLECTION_QUERY_OK", value: items });
-              //console.log(items);
-              resolve([items[0].telefono, items[1].telefono, items[2].telefono]);
+        console.log("COLLECTION_BAD_QUERY");
 
       }
-    } 
+      else {
+        //return response.json({ status: "ok", name: tabla, description: "COLLECTION_QUERY_OK", value: items });
+        //console.log(items);
+        resolve([items[0].telefono, items[1].telefono, items[2].telefono]);
+
+      }
+    }
 
     // acá te conectás a la base de datos 
     // y retornás los números de la familia

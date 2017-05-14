@@ -21,8 +21,9 @@ function CORS(req, res, next) {
 
 /**
  * Al hacer un POST a esta ruta 
- * con los parámetros to y msg, se envía
+ * con los parámetros to y msg en JSON, se envía
  * un mensaje de texto con twilio
+ * Ej: localhost:5000/send  body: {"to":"+57(numero)","msg":"blablabla"}
  */
 app.post('/send', function (req, res) {
 
@@ -43,13 +44,14 @@ app.post('/send', function (req, res) {
 /**
  * Al hacer un POST a esta ruta 
  * con los parámetros uid,lat,long en JSON, se envía
- * un mensaje de texto con twilio a los familiares
+ * un mensaje de texto con twilio a los familiares.
+ * Ej: localhost:5000/send  body: {"uid":"1","lat":"3.4323","long":"-76.567"}
  */
 
-app.post('/attack',function (req, res) {
+app.post('/attack', function (req, res) {
 
   if (!req.body.uid || !req.body.lat || !req.body.long) {
-    res.json({ ok: false, error: "Missing some parameter"})
+    res.json({ ok: false, error: "Missing some parameter" })
     return;
   }
 
@@ -64,7 +66,7 @@ app.post('/attack',function (req, res) {
       //let promiseMensaje = sendMessage(number, 'Tu familiar está teniendo un ataque');
 
       //Propuesta   http://maps.google.com/maps?z=12&t=m&q=loc:38.9419+-78.3020
-      let promiseMensaje = sendMessage(number, 'Tu familiar está teniendo un ataque en la Ubicacion: '+'http://maps.google.com/maps?z=12&t=m&q=loc:'+ req.body.lat +'+'+req.body.lat);
+      let promiseMensaje = sendMessage(number, 'Tu familiar está teniendo un ataque en la Ubicacion: ' + 'http://maps.google.com/maps?z=12&t=m&q=loc:' + req.body.lat + '+' + req.body.lat);
 
       promisesMensajes.push(promiseMensaje);
     });
