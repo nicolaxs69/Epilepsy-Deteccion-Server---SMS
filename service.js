@@ -31,7 +31,10 @@ module.exports.create = function (request, response) {
 		else {
 			return response.json({ status: "ok", name: tabla, description: "COLLECTION_INSERTION_OK", value: object._id });
 		}
+
 	}
+	console.log(" Usuario creado");
+
 }
 
 module.exports.read = function (request, response) {
@@ -58,8 +61,8 @@ module.exports.read = function (request, response) {
 			return response.json({ status: "fail", name: tabla, description: "COLLECTION_BAD_QUERY", value: [{}] });
 		}
 		else {
-			return response.json({ status: "ok", name: tabla, description: "COLLECTION_QUERY_OK", value: items});
-			
+			return response.json({ status: "ok", name: tabla, description: "COLLECTION_QUERY_OK", value: items });
+
 		}
 
 	}
@@ -105,14 +108,17 @@ module.exports.update = function (request, response) {
 
 	var objeto = factory.createObjectWithName(tabla, v1, v2, v3, v4);
 
+
 	if (objeto == null) {
 		return response.json({ status: "fail", name: tabla, description: "COLLECTION_DONT_EXIST", value: [{}] });
 	}
 	else {
 		var updatedData = objeto.toObject();
 		delete updatedData._id;
+		console.log("Usuario Update");
 		return factory.updateData(tabla, id, updatedData, response);
 	}
+
 }
 
 module.exports.delete = function (request, response) {
@@ -137,6 +143,7 @@ module.exports.delete = function (request, response) {
 			return response.json({ status: "ok", name: tabla, description: "COLLECTION_REMOVE_FAIL", value: [{}] });
 		}
 	}
+	console.log("Usuario Borrado");
 }
 
 module.exports.post = function (request, response) {
