@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/**/*.test.js"
+    "test": "./node_modules/.bin/mocha test/**/*.test.js",
+       "start": "node index.js"
   },
   "keywords": [
     "example",
@@ -13,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
+    "body-parser": "*",
+    "express": "*",
     "twilio": "^2.11.1",
     "mongoose": "*"
   },
@@ -23,6 +24,6 @@
     "mocha": "^3.3.0"
   },
   "engines": {
-    "node": "6.10.3"
+    "node": "*"
   }
 }
