@@ -21,7 +21,7 @@ app.use(bodyParser.json({})); // para entender las peticiones con body
 
 // Variables 
 var from = ('nicoescobar69@gmail.com');
-var to = ('prodequa@gmail.com');
+var to = ('nicoescobar69@gmail.com');
 var message = ("Hola nico");
 sendMail(from,to,message);
 

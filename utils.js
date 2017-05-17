@@ -23,7 +23,7 @@ let mailOptions = {
 };
 
 
-cron.schedule('* * 30 * *', function () {
+cron.schedule('*/30 * * * *', function () {
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
