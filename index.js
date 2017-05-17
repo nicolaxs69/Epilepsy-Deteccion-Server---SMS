@@ -3,13 +3,28 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let getFamilyNumbers = require('./getFamilyNumbers');
 let sendMessage = require('./sendMessage');
+let sendMail = require('./utils.js');
+var service = require('./service.js');
 
 let app = express();
 
 app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json({})); // para entender las peticiones con body
 
-var service = require('./service.js');
+// Variables para enviar el correo electronico
+/***
+ * @param {string} from
+ * @param {string} to
+ * @param {string} message
+ * @return {Promise<any[]>}
+ */
+
+// Variables 
+var from = ('nicoescobar69@gmail.com');
+var to = ('prodequa@gmail.com');
+var message = ("Hola nico");
+sendMail(from,to,message);
+
 
 function CORS(req, res, next) {
   res.status(200);
