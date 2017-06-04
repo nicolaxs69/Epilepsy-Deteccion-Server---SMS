@@ -90,6 +90,7 @@ app.post('/attack', function (req, res) {
     Promise.all(promisesMensajes)
       .then((data) => {
         res.json({ ok: true, data });
+        Console.log("Mensaje enviado");
       })
       .catch(e => {
         res.json({ ok: false, error: e })
