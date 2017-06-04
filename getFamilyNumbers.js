@@ -42,6 +42,7 @@ function getFamilyNumbers(uid, lat, long) {
         //return response.json({ status: "ok", name: tabla, description: "COLLECTION_QUERY_OK", value: items });
         //console.log(items);
         resolve([items[0].telefono, items[1].telefono, items[2].telefono]);
+        
 
       }
     }

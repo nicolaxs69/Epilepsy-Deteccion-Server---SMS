@@ -84,13 +84,15 @@ app.post('/attack', function (req, res) {
       let promiseMensaje = sendMessage(number, 'Tu familiar está teniendo un ataque en la Ubicacion: ' + 'http://maps.google.com/maps?z=12&t=m&q=loc:' + req.body.lat + '+' + req.body.lat);
 
       promisesMensajes.push(promiseMensaje);
+        
     });
 
     // Aqui se espera a que todos los mensajes se envíen
     Promise.all(promisesMensajes)
       .then((data) => {
         res.json({ ok: true, data });
-        Console.log("Mensaje enviado");
+              console.log("Mensajes enviado");
+
       })
       .catch(e => {
         res.json({ ok: false, error: e })
