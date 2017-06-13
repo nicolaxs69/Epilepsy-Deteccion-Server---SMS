@@ -58,19 +58,19 @@ app.post('/send', function (req, res) {
 
 /**
  * Al hacer un POST a esta ruta 
- * con los parámetros uid,lat,long en JSON, se envía
+ * con los parámetros uid,lat,lon en JSON, se envía
  * un mensaje de texto con twilio a los familiares.
- * Ej: localhost:5000/send  body: {"uid":"1","lat":"3.4323","long":"-76.567"}
+ * Ej: localhost:5000/send  body: {"uid":"1","lat":"3.4323","lon":"-76.567"}
  */
 
 app.post('/attack', function (req, res) {
 
-  if (!req.body.uid || !req.body.lat || !req.body.long) {
+  if (!req.body.uid || !req.body.lat || !req.body.lon) {
     res.json({ ok: false, error: "Missing some parameter" })
     return;
   }
 
-  getFamilyNumbers(req.body.uid, req.body.lat, req.body.long).then((numbers = []) => {
+  getFamilyNumbers(req.body.uid, req.body.lat, req.body.lon).then((numbers = []) => {
 
     // enviarle un mensaje a cada numero
     let promisesMensajes = [];

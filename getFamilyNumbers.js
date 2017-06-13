@@ -3,11 +3,11 @@ var factory = require('./factory.js');
 /***
  * @param {string} uid
  * @param {string} lat
- * @param {string} long
+ * @param {string} lon
  * @return {Promise<any[]>}
  */
 
-function getFamilyNumbers(uid, lat, long) {
+function getFamilyNumbers(uid, lat, lon) {
   return new Promise((resolve, reject) => {
 
 
