@@ -81,7 +81,7 @@ app.post('/attack', function (req, res) {
       //let promiseMensaje = sendMessage(number, 'Tu familiar está teniendo un ataque');
 
       //Propuesta   http://maps.google.com/maps?z=12&t=m&q=loc:38.9419+-78.3020
-      let promiseMensaje = sendMessage(number, 'Tu familiar está teniendo un ataque en la Ubicacion: ' + 'http://maps.google.com/maps?z=12&t=m&q='+ req.body.lat + ',' + req.body.lat);
+      let promiseMensaje = sendMessage(number, 'Tu familiar está teniendo un ataque en la Ubicacion: ' + 'http://maps.google.com/maps?z=12&t=m&q='+ req.body.lat + ',' + req.body.lon);
 
       promisesMensajes.push(promiseMensaje);
         
