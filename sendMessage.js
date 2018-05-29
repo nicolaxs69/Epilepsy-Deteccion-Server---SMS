@@ -10,12 +10,12 @@ let yo = "<instertar numero>"
  */
 
 module.exports = function(telephone, text){
- 
+
    return new Promise((resolve,reject)=>{
     client.messages.create({
         body: text,
         to: telephone,
-        from: "+15005550006" // cambiar este número
+        from: "+19093665653" // cambiar este número
     }, function(err, sms) {
         if(err){
           reject({error: err, ok: false});
