@@ -15,7 +15,7 @@ module.exports = function(telephone, text){
     client.messages.create({
         body: text,
         to: telephone,
-        from: "+1863514160" // cambiar este número
+        from: "1863514160" // cambiar este número
     }, function(err, sms) {
         if(err){
           reject({error: err, ok: false});
